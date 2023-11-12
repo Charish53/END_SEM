@@ -47,9 +47,9 @@ double smallest_distance(vector<P> points, vector<P> points_by_y) {
 
     for (int i = 0; i < (int)stripe.size(); ++i) {
         for (int j = i + 1; j < (int)stripe.size() && sq(stripe[j].y - stripe[i].y) < d; ++j) {
-            d = min(d, distance(stripe[i], stripe[j));
+            d = min(d, distance(stripe[i], stripe[j]));
             if (d < min_distance) {
-                min_distance = d;
+                min_distance =  d;
                 closest_pair = make_pair(stripe[i], stripe[j]);
             }
         }
@@ -74,7 +74,7 @@ int main() {
 
     smallest_distance(points, points_by_y);
 
-    cout << "Smallest distance: " << min_distance << endl;
+    cout << "Smallest distance: " <<sqrt(min_distance) << endl;
     cout << "Closest pair of points: (" << closest_pair.first.x << ", " << closest_pair.first.y << ") and ("
          << closest_pair.second.x << ", " << closest_pair.second.y << ")" << endl;
 
